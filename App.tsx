@@ -13,7 +13,7 @@ export default function App() {
           color: "#fff",
         }}
       >
-        Guilherme Cardoso quer mamar um pau!
+       
       </Text>
     </View>
   );
