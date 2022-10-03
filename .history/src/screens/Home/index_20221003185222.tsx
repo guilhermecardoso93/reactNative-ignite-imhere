@@ -27,25 +27,13 @@ export default function Home() {
   ];
 
   function handleAddPArticipant() {
-    if (participants.includes("Rodrigo")) {
-      return Alert.alert(
-        "Participante já existe",
-        "Participante já cadastrado nesse evento!"
-      );
-    }
+   if(participants.includes("Rodrigo")){
+    return Alert.alert("Participante já existe", "Participante já cadastrado nesse evento!")
+   }
   }
 
   function handleRemovePArticipant(name: string) {
-    Alert.alert("Remover", `Remover o participante ${name}?`, [
-      {
-        text: "Sim",
-        onPress: () => Alert.alert("Deletado!"),
-      },
-      {
-        text: "Não",
-        style: "cancel",
-      },
-    ]);
+    console.log(`Você Removeu o ${name}`);
   }
 
   return (
