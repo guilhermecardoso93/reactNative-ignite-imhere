@@ -12,28 +12,24 @@ import { Participant } from "../../components/Participant";
 import { styles } from "./styles";
 
 export default function Home() {
-  const [participants, setParticipants] = useState<string[]>([]);
-  const [participantName, setParticipantName] = useState("");
+  const [participants, setParticipants ] = useState(['Guilherme'])
 
-  function handleAddParticipant() {
-    if (participants.includes(participantName)) {
+  function handleAddPArticipant() {
+    if (participants.includes("Rodrigo")) {
       return Alert.alert(
         "Participante já existe",
         "Participante já cadastrado nesse evento!"
       );
+
+
     }
-    setParticipants((prevState) => [...prevState, participantName]);
-    setParticipantName("");
   }
 
-  function handleRemoveParticipant(name: string) {
+  function handleRemovePArticipant(name: string) {
     Alert.alert("Remover", `Remover o participante ${name}?`, [
       {
         text: "Sim",
-        onPress: () =>
-          setParticipants((prevState) =>
-            prevState.filter((participant) => participant !== name)
-          ),
+        onPress: () => Alert.alert("Deletado!"),
       },
       {
         text: "Não",
@@ -51,10 +47,8 @@ export default function Home() {
           style={styles.eventInput}
           placeholder="Nome do Participante"
           placeholderTextColor="#6b6b6b"
-          onChangeText={setParticipantName}
-          value={participantName}
         />
-        <TouchableOpacity style={styles.button} onPress={handleAddParticipant}>
+        <TouchableOpacity style={styles.button} onPress={handleAddPArticipant}>
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
@@ -66,7 +60,7 @@ export default function Home() {
           <Participant
             participantName={item}
             key={item}
-            onRemove={() => handleRemoveParticipant(item)}
+            onRemove={() => handleRemovePArticipant(item)}
           />
         )}
         ListEmptyComponent={() => (
